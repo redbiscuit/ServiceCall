@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.introspect.VisibilityChecker;
 import org.apache.commons.lang3.StringEscapeUtils;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,5 +40,6 @@ public class RequestTest {
         System.out.println(R.getData().getTotal().getHold_money());
         System.out.println(R.getData().getList().get(5).getMember_bet_count());
         System.out.println(R.getData().getList().size());
+        mapper.writeValue(new File("ttt.json"),R);
     }
 }
